@@ -52,9 +52,12 @@ export default function NewBrew(){
     <div className="mx-auto max-w-2xl px-4 py-6">
       <form className="grid gap-4" onSubmit={save}>
         <Field label="Fecha y hora" required>
-          <input type="datetime-local" value={new Date(form.fecha).toISOString().slice(0,16)}
+          <input
+            type="datetime-local"
+            value={new Date(form.fecha).toISOString().slice(0,16)}
             onChange={e=>update('fecha', new Date(e.target.value).toISOString())}
-            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"/>
+            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+          />
         </Field>
 
         <Field label="Método">
@@ -63,38 +66,64 @@ export default function NewBrew(){
 
         <div className="grid grid-cols-2 gap-4">
           <Field label="Molino">
-            <input value={form.molino} onChange={e=>update('molino', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              value={form.molino}
+              onChange={e=>update('molino', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Molienda (#)" hint="M1 Race: usa tu calibración preferida">
-            <input inputMode="numeric" value={form.molienda} onChange={e=>update('molienda', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              inputMode="numeric"
+              value={form.molienda}
+              onChange={e=>update('molienda', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
         </div>
 
         <div className="grid grid-cols-3 gap-4">
           <Field label="Gramos café" required>
-            <input inputMode="numeric" value={form.gramosCafe} onChange={e=>update('gramosCafe', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              inputMode="numeric"
+              value={form.gramosCafe}
+              onChange={e=>update('gramosCafe', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Gramos agua" required>
-            <input inputMode="numeric" value={form.gramosAgua} onChange={e=>update('gramosAgua', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              inputMode="numeric"
+              value={form.gramosAgua}
+              onChange={e=>update('gramosAgua', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Ratio">
-            <input value={form.ratio} onChange={e=>update('ratio', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              value={form.ratio}
+              onChange={e=>update('ratio', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
         </div>
 
         <div className="grid grid-cols-3 gap-4">
           <Field label="Temp (°C)">
-            <input inputMode="numeric" value={form.temperatura} onChange={e=>update('temperatura', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              inputMode="numeric"
+              value={form.temperatura}
+              onChange={e=>update('temperatura', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Tiempo total (seg)">
-            <input inputMode="numeric" value={form.tiempoTotal} onChange={e=>update('tiempoTotal', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              inputMode="numeric"
+              value={form.tiempoTotal}
+              onChange={e=>update('tiempoTotal', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Puntaje (0–10)">
             <Rating value={form.puntaje} onChange={v=>update('puntaje', v)} />
@@ -103,24 +132,37 @@ export default function NewBrew(){
 
         <div className="grid grid-cols-2 gap-4">
           <Field label="Café / Origen">
-            <input value={form.cafe} onChange={e=>update('cafe', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              value={form.cafe}
+              onChange={e=>update('cafe', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
           <Field label="Tueste">
-            <input value={form.tueste} onChange={e=>update('tueste', e.target.value)}
-              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            <input
+              value={form.tueste}
+              onChange={e=>update('tueste', e.target.value)}
+              className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+            />
           </Field>
         </div>
 
         <Field label="Fecha de tueste">
-          <input type="date" value={form.fechaTueste?.slice(0,10) || ''}
+          <input
+            type="date"
+            value={form.fechaTueste?.slice(0,10) || ''}
             onChange={e=>update('fechaTueste', e.target.value ? new Date(e.target.value).toISOString() : '')}
-            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+          />
         </Field>
 
         <Field label="Notas">
-          <textarea rows="4" value={form.notas} onChange={e=>update('notas', e.target.value)}
-            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2" />
+          <textarea
+            rows="4"
+            value={form.notas}
+            onChange={e=>update('notas', e.target.value)}
+            className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
+          />
         </Field>
 
         <Field label="Resultado">

@@ -1,10 +1,9 @@
-const METHODS = ['Moka','V60','Kalita','Goteo']
-
-export default function MethodSelect({ value, onChange }){
+export default function Field({ label, children, hint, required }) {
   return (
-    <select className="w-full rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2"
-      value={value} onChange={e=>onChange(e.target.value)}>
-      {METHODS.map(m => <option key={m} value={m}>{m}</option>)}
-    </select>
+    <label className="block">
+      <span className="block text-sm mb-1">{label}{required && ' *'}</span>
+      {children}
+      {hint && <p className="text-xs text-neutral-500 mt-1">{hint}</p>}
+    </label>
   )
 }
