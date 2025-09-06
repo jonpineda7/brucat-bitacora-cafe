@@ -126,7 +126,10 @@ export default function NewBrew(){
             />
           </Field>
           <Field label="Puntaje (0–10)">
-            <Rating value={form.puntaje} onChange={v=>update('puntaje', v)} />
+            <div className="flex items-center gap-2">
+              <Rating value={form.puntaje} onChange={v=>update('puntaje', v)} />
+              <span className="text-sm font-medium">{form.puntaje}</span>
+            </div>
           </Field>
         </div>
 
